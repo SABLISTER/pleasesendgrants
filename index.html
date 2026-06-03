@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Michael House — Neurobehavioral Analyst &amp; Researcher</title>
+<meta name="description" content="Michael House — Neurobehavioral Analyst at the Child Mind Institute. Neuroscience researcher in EEG, fMRI, and computational methods, translating neurological data into accessible tools for neurodivergent communities. Founder of IMAF &amp; H Consulting." />
+<meta name="author" content="Michael House" />
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0b0b0e" media="(prefers-color-scheme: dark)" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Michael House — Neurobehavioral Analyst &amp; Researcher" />
+<meta property="og:description" content="Neuroscience researcher in EEG, fMRI, and computational methods, translating neurological data into accessible tools for neurodivergent communities." />
+<meta property="og:site_name" content="Michael House" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon: minimalist MH node monogram -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234b3fe4'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-weight='700' text-anchor='middle' fill='white'%3EM%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#fbfaf8;
+    --bg-alt:#f3f2ee;
+    --surface:#ffffff;
+    --text:#16161a;
+    --muted:#67676f;
+    --faint:#9a9aa3;
+    --border:#e7e6e1;
+    --accent:#4b3fe4;
+    --accent-soft:#ece9ff;
+    --shadow:0 1px 2px rgba(20,20,30,.04), 0 12px 32px -12px rgba(20,20,30,.10);
+    --maxw:1080px;
+    --r:14px;
+  }
+  html[data-theme="dark"]{
+    --bg:#0b0b0e;
+    --bg-alt:#111116;
+    --surface:#15151b;
+    --text:#f1f1f4;
+    --muted:#a0a0aa;
+    --faint:#70707a;
+    --border:#262630;
+    --accent:#8b83ff;
+    --accent-soft:#1e1b35;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.6);
+  }
+  @media (prefers-color-scheme: dark){
+    html[data-theme="auto"]{
+      --bg:#0b0b0e;--bg-alt:#111116;--surface:#15151b;--text:#f1f1f4;
+      --muted:#a0a0aa;--faint:#70707a;--border:#262630;--accent:#8b83ff;--accent-soft:#1e1b35;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.6);
+    }
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    transition:background .4s ease,color .4s ease;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 7vw}
+  @media(min-width:900px){.wrap{padding:0 48px}}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(160%) blur(12px);
+    background:color-mix(in srgb, var(--bg) 82%, transparent);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background .3s ease;
+  }
+  header.nav.scrolled{border-bottom-color:var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:var(--maxw);margin:0 auto;padding:0 7vw}
+  @media(min-width:900px){.nav-inner{padding:0 48px}}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em}
+  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:'Newsreader',serif;font-weight:600;font-size:18px}
+  .nav-links{display:none;align-items:center;gap:30px}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  @media(min-width:820px){.nav-links{display:flex}}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .theme-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--muted);display:grid;place-items:center;cursor:pointer;transition:.2s}
+  .theme-btn:hover{color:var(--text);border-color:var(--accent)}
+  .theme-btn svg{width:17px;height:17px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:9px 16px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;transition:.2s;white-space:nowrap}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--border)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---------- ECHO LABEL ---------- */
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;display:inline-flex;align-items:center;gap:9px}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--accent);opacity:.6}
+  section{padding:96px 0;position:relative}
+  @media(max-width:700px){section{padding:68px 0}}
+  .sec-head{margin-bottom:46px}
+  .sec-head h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;margin-top:14px;line-height:1.1}
+  .sec-head p{color:var(--muted);max-width:54ch;margin-top:14px;font-size:16px}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:clamp(70px,11vw,130px) 0 clamp(60px,8vw,96px);position:relative;overflow:hidden}
+  .hero .nodes{position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none;mask-image:radial-gradient(120% 90% at 78% 18%, #000 0%, transparent 72%)}
+  html[data-theme="dark"] .hero .nodes{opacity:.4}
+  .hero-content{position:relative;z-index:1;max-width:780px}
+  .hero h1{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(40px,8vw,76px);line-height:1.02;letter-spacing:-.025em;margin:20px 0 0}
+  .hero .lede{font-size:clamp(18px,2.4vw,22px);color:var(--muted);margin-top:24px;max-width:58ch;line-height:1.5}
+  .hero .lede b{color:var(--text);font-weight:600}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+  .fact{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:7px 13px;border-radius:999px;display:inline-flex;align-items:center;gap:8px}
+  .fact b{color:var(--text);font-weight:600}
+  .fact .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;gap:34px}
+  @media(min-width:820px){.about-grid{grid-template-columns:1fr 1fr;gap:56px}}
+  .about-grid p{color:var(--muted);font-size:17px}
+  .about-grid p + p{margin-top:18px}
+  .about-grid b{color:var(--text);font-weight:600}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative;display:grid;gap:6px}
+  .role{display:grid;grid-template-columns:1fr;gap:4px;padding:24px 0;border-top:1px solid var(--border)}
+  .role:last-child{border-bottom:1px solid var(--border)}
+  @media(min-width:760px){.role{grid-template-columns:180px 1fr;gap:34px;align-items:baseline}}
+  .role .when{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint);padding-top:3px}
+  .role h3{font-size:18px;font-weight:600;letter-spacing:-.01em}
+  .role .org{color:var(--accent);font-weight:500;font-size:15px;margin-top:1px}
+  .role .desc{color:var(--muted);font-size:15.5px;margin-top:10px;max-width:62ch}
+
+  /* ---------- SKILLS ---------- */
+  .skill-grid{display:grid;gap:24px}
+  @media(min-width:680px){.skill-grid{grid-template-columns:1fr 1fr}}
+  .skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px 24px 26px;transition:.25s;box-shadow:var(--shadow)}
+  .skill-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
+  .skill-card .lbl{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:13.5px;background:var(--bg-alt);border:1px solid var(--border);color:var(--text);padding:5px 11px;border-radius:8px;font-weight:500}
+  html[data-theme="dark"] .tag{background:#1c1c24}
+
+  /* ---------- HONORS ---------- */
+  .cols{display:grid;gap:40px}
+  @media(min-width:760px){.cols{grid-template-columns:1fr 1fr;gap:56px}}
+  .listblock h3{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:500}
+  .listblock ul{list-style:none;display:grid;gap:14px}
+  .listblock li{display:flex;gap:13px;font-size:15.5px;color:var(--text);align-items:flex-start}
+  .listblock li span.b{color:var(--faint);font-family:'JetBrains Mono',monospace;font-size:13px;flex-shrink:0;padding-top:1px}
+  .listblock li small{display:block;color:var(--muted);font-size:13.5px;font-weight:400}
+
+  /* ---------- NONPROFIT ---------- */
+  .org{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .org-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:40px}
+  .org-head .tag-line{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(22px,3.2vw,30px);color:var(--text);font-weight:400;margin-top:14px;max-width:24ch;line-height:1.2}
+  .org-mission{color:var(--muted);max-width:60ch;font-size:17px}
+  .svc-grid{display:grid;gap:18px;margin-top:42px}
+  @media(min-width:720px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+  .svc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:26px 24px;box-shadow:var(--shadow);transition:.25s}
+  .svc:hover{transform:translateY(-3px)}
+  .svc .ic{width:42px;height:42px;border-radius:11px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+  .svc .ic svg{width:21px;height:21px}
+  .svc h4{font-size:16.5px;font-weight:600;margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:14.5px;line-height:1.55}
+  .org-foot{margin-top:38px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding-top:30px;border-top:1px dashed var(--border)}
+  .org-foot .free{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:8px}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center}
+  .contact .big{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(32px,6vw,60px);letter-spacing:-.02em;line-height:1.05;margin:18px auto 0;max-width:18ch}
+  .contact .big a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px;text-decoration-color:color-mix(in srgb,var(--accent) 40%,transparent);transition:.2s}
+  .contact .big a:hover{text-decoration-color:var(--accent)}
+  .contact .sub{color:var(--muted);margin-top:24px;font-size:16px}
+  .contact-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+
+  /* ---------- FOOTER ---------- */
+  footer.ft{border-top:1px solid var(--border);padding:40px 0}
+  .ft-inner{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+  .ft-inner small{color:var(--faint);font-size:13.5px}
+  .ft-links{display:flex;gap:22px;flex-wrap:wrap}
+  .ft-links a{font-size:13.5px;color:var(--muted);transition:.2s}
+  .ft-links a:hover{color:var(--accent)}
+
+
+  /* ---------- TERMINAL ---------- */
+  .term-band{padding:6px 0 92px}
+  @media(max-width:700px){.term-band{padding:4px 0 64px}}
+  .terminal{max-width:780px;margin:0 auto;border-radius:13px;overflow:hidden;border:1px solid #20232b;background:#0d1117;box-shadow:0 28px 64px -28px rgba(0,0,0,.55)}
+  .term-bar{display:flex;align-items:center;gap:8px;padding:11px 15px;background:#161b22;border-bottom:1px solid #20232b}
+  .tdot{width:12px;height:12px;border-radius:50%}
+  .tdot.r{background:#ff5f56}.tdot.y{background:#ffbd2e}.tdot.g{background:#27c93f}
+  .term-title{margin-left:10px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#7d8590}
+  .term-body{padding:20px 20px 22px;overflow-x:auto}
+  .term-body pre{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',monospace;font-size:13px;line-height:1.5;color:#c9d1d9;white-space:pre;margin:0}
+  @media(max-width:560px){.term-body pre{font-size:10px;line-height:1.5}}
+  .term-body .usr{color:#3fb950;font-weight:500}
+  .term-body .pth{color:#58a6ff}
+  .term-body .pl{color:#6e7681}
+  .term-body .banner{background:linear-gradient(92deg,#8b83ff 0%,#39d0d8 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#8b83ff}
+  .term-body .rule{color:#2d333b}
+  .term-body .key{color:#d2a8ff;font-weight:500}
+  .term-body .cmt{color:#7ee787;font-style:italic;opacity:.9}
+  .term-body .cursor{color:#c9d1d9;animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion: reduce){.term-body .cursor{animation:none}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Michael House — home">
+      <span class="mark">M</span><span>Michael House</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#honors">Honors</a>
+      <a href="#consulting">Consulting</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn" href="mailto:housem@nothelp.help">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <svg class="nodes" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 600" aria-hidden="true">
+      <g stroke="var(--accent)" stroke-width="1" opacity="0.35" fill="none">
+        <line x1="820" y1="90" x2="700" y2="200"/><line x1="700" y1="200" x2="880" y2="260"/>
+        <line x1="880" y1="260" x2="760" y2="360"/><line x1="700" y1="200" x2="560" y2="150"/>
+        <line x1="560" y1="150" x2="640" y2="300"/><line x1="640" y1="300" x2="760" y2="360"/>
+        <line x1="880" y1="260" x2="960" y2="160"/><line x1="640" y1="300" x2="520" y2="420"/>
+        <line x1="760" y1="360" x2="870" y2="450"/>
+      </g>
+      <g fill="var(--accent)">
+        <circle cx="820" cy="90" r="4"/><circle cx="700" cy="200" r="5"/><circle cx="880" cy="260" r="4"/>
+        <circle cx="760" cy="360" r="5"/><circle cx="560" cy="150" r="3.5"/><circle cx="640" cy="300" r="4"/>
+        <circle cx="960" cy="160" r="3"/><circle cx="520" cy="420" r="3.5"/><circle cx="870" cy="450" r="4"/>
+      </g>
+    </svg>
+    <div class="wrap hero-content">
+      <span class="eyebrow">Neurobehavioral Analyst · Child Mind Institute</span>
+      <h1>Research-driven science,<br>fueled by advocacy.</h1>
+      <p class="lede">I'm <b>Michael House</b> — a neuroscience researcher working across EEG, fMRI, and computational methods to translate complex neurological data into <b>accessible, real-world tools</b> for neurodivergent communities.</p>
+      <div class="hero-cta">
+        <a class="btn" href="mailto:housem@nothelp.help">Get in touch →</a>
+        <a class="btn ghost" href="#consulting">IMAF &amp; H Consulting</a>
+      </div>
+      <div class="facts">
+        <span class="fact"><span class="dot"></span><b>Summa Cum Laude</b>&nbsp;· 3.94 GPA</span>
+        <span class="fact"><span class="dot"></span>Simons Fellow ·&nbsp;<b>Princeton</b></span>
+        <span class="fact"><span class="dot"></span><b>5+ years</b>&nbsp;in research</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMINAL / ASCII -->
+  <section class="term-band" id="cli">
+    <div class="wrap">
+      <div class="terminal reveal" role="img" aria-label="Terminal panel. ASCII banner reading MICHAEL HOUSE, followed by a profile readout: Neurobehavioral Analyst at the Child Mind Institute; B.A. Psychology, Montclair State, Summa Cum Laude 3.94; Simons Foundation, Princeton and Wilson Center fellowships; stack Python, MATLAB, Bash, SQL; imaging FSL, AFNI, MNE-Python, Nilearn, C-PAC; founder of IMAF and H Consulting; contact housem@nothelp.help; site pleasesendgrants.org.">
+        <div class="term-bar">
+          <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+          <span class="term-title">mike@pleasesendgrants — zsh</span>
+        </div>
+        <div class="term-body"><pre aria-hidden="true"><span class="pl"><span class="usr">mike@pleasesendgrants</span>:<span class="pth">~</span>$ </span>whoami
+
+<span class="banner">███╗   ███╗██╗ ██████╗██╗  ██╗ █████╗ ███████╗██╗
+████╗ ████║██║██╔════╝██║  ██║██╔══██╗██╔════╝██║
+██╔████╔██║██║██║     ███████║███████║█████╗  ██║
+██║╚██╔╝██║██║██║     ██╔══██║██╔══██║██╔══╝  ██║
+██║ ╚═╝ ██║██║╚██████╗██║  ██║██║  ██║███████╗███████╗
+╚═╝     ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
+██╗  ██╗ ██████╗ ██╗   ██╗███████╗███████╗
+██║  ██║██╔═══██╗██║   ██║██╔════╝██╔════╝
+███████║██║   ██║██║   ██║███████╗█████╗
+██╔══██║██║   ██║██║   ██║╚════██║██╔══╝
+██║  ██║╚██████╔╝╚██████╔╝███████║███████╗
+╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝</span>
+
+<span class="pl"><span class="usr">mike@pleasesendgrants</span>:<span class="pth">~</span>$ </span>neofetch
+<span class="rule">────────────────────────────────────────────────────────────────────────</span>
+ <span class="key">role</span>         Neurobehavioral Analyst @ Child Mind Institute
+ <span class="key">education</span>    B.A. Psychology · Montclair State (Summa Cum Laude, 3.94)
+ <span class="key">fellowships</span>  Simons Foundation · Princeton (PNI) · Wilson Center
+ <span class="key">stack</span>        Python · MATLAB · Bash · SQL · RNN modeling
+ <span class="key">imaging</span>      FSL · AFNI · MNE-Python · Nilearn · C-PAC · EEGLAB
+ <span class="key">org</span>          IMAF &amp; H Consulting — 501(c)(3)
+ <span class="key">focus</span>        autism · sensory processing · accessibility
+ <span class="key">contact</span>      housem@nothelp.help
+ <span class="key">site</span>         pleasesendgrants.org
+<span class="rule">────────────────────────────────────────────────────────────────────────</span>
+
+<span class="pl"><span class="usr">mike@pleasesendgrants</span>:<span class="pth">~</span>$ </span>./help --advocacy
+<span class="cmt"># yes, you can just email me. (a Boston Crème helps.)</span>
+<span class="pl"><span class="usr">mike@pleasesendgrants</span>:<span class="pth">~</span>$ </span><span class="cursor">█</span></pre></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">01 — About</span>
+        <h2>Bridging psychology, neuroscience, and code.</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div>
+          <p>I'm a neurobehavioral analyst and neuroscience researcher with <b>over five years of experience</b> spanning EEG, fMRI, and computational methods. At the <b>Child Mind Institute</b>, I supervise fMRI datasets, build automation scripts, and run quality control — alongside biweekly assessments and support for sleep studies.</p>
+          <p>My work draws on quantitative EEG analysis, cognitive assessment, and neurodiversity-focused research.</p>
+        </div>
+        <div>
+          <p>I focus on <b>sensory processing in autism</b> and on teaching methods that support diverse learners. By integrating psychology and neuroscience, I work to turn rigorous findings into tools that create tangible benefits in clinical and educational settings.</p>
+          <p>That same commitment carries into leadership and advocacy — through fellowships, community initiatives, and the nonprofit I founded and direct.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">02 — Experience</span>
+        <h2>Where I've worked.</h2>
+      </div>
+      <div class="timeline reveal">
+        <article class="role">
+          <div class="when">2025 — Present</div>
+          <div>
+            <h3>Neurobehavioral Analyst</h3>
+            <div class="org">Child Mind Institute</div>
+            <p class="desc">Supervise fMRI datasets, automation scripts, and quality control. Prepare and distribute biweekly internal data assessments to investigators, and provide technical and physical support for fMRI sleep studies.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">Montclair State</div>
+          <div>
+            <h3>EEG &amp; Data Management Team Lead</h3>
+            <div class="org">Autism &amp; Neurodevelopment Lab</div>
+            <p class="desc">Administered ERP CORE paradigms with children aged 6–18 using REDCap, Curry 7, and Presentation. Established data-acquisition protocols that strengthened data integrity, contributing to a forthcoming journal article on genetic contributions to autism and an APA Convention 2025 poster.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">Consulting</div>
+          <div>
+            <h3>Neuromarketing Consultant</h3>
+            <div class="org">Independent</div>
+            <p class="desc">Apply neurobehavioral methods and data analysis to translate research into practical, real-world insight.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">Founder</div>
+          <div>
+            <h3>Founder &amp; Director</h3>
+            <div class="org">IMAF &amp; H Consulting · 501(c)(3)</div>
+            <p class="desc">Founded and direct a nonprofit developing interventions and inclusion initiatives for individuals on the autism spectrum. Spearheaded ER2 program grant proposals and organized advocacy events and community fundraisers.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">03 — Skills &amp; Tools</span>
+        <h2>A computational, hands-on toolkit.</h2>
+        <p>From raw neural acquisition to reproducible analysis on high-performance compute.</p>
+      </div>
+      <div class="skill-grid reveal">
+        <div class="skill-card">
+          <div class="lbl">Programming &amp; Data</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">MATLAB</span><span class="tag">Bash</span>
+            <span class="tag">SQL</span><span class="tag">RNN modeling</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="lbl">Neuroimaging &amp; EEG</div>
+          <div class="tags">
+            <span class="tag">MNE-Python</span><span class="tag">EEGLAB / ERPLAB</span><span class="tag">BCILAB</span>
+            <span class="tag">FSL</span><span class="tag">AFNI</span><span class="tag">Nilearn</span><span class="tag">C-PAC</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="lbl">Clinical Assessment</div>
+          <div class="tags">
+            <span class="tag">ADOS</span><span class="tag">SRS</span><span class="tag">SSIS</span>
+            <span class="tag">ASD-ASC</span><span class="tag">D-KEFS</span><span class="tag">KBIT / KBIT-2</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="lbl">Platforms</div>
+          <div class="tags">
+            <span class="tag">macOS</span><span class="tag">Windows 11</span><span class="tag">Linux</span>
+            <span class="tag">HPC · Slurm</span><span class="tag">Docker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONORS -->
+  <section id="honors" style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">04 — Education &amp; Recognition</span>
+        <h2>Foundations &amp; honors.</h2>
+      </div>
+      <div class="cols reveal">
+        <div class="listblock">
+          <h3>Education &amp; Training</h3>
+          <ul>
+            <li><span class="b">'25</span><div><b>B.A. Psychology</b> — Montclair State University<small>Summa Cum Laude · 3.94 GPA · cognitive science, neurobiology &amp; psychopathology</small></div></li>
+            <li><span class="b">'25</span><div>FSL Course — University of Oxford<small>Functional MRI analysis</small></div></li>
+            <li><span class="b">'25</span><div>Functional MRI Workshop — Martinos Center</div></li>
+            <li><span class="b">'25</span><div>Computational Neuroscience — Neuromatch Academy</div></li>
+          </ul>
+        </div>
+        <div class="listblock">
+          <h3>Fellowships &amp; Honors</h3>
+          <ul>
+            <li><span class="b">◇</span><div>Simons Foundation Fellowships<small>Princeton Neuroscience Institute &amp; the Wilson Center</small></div></li>
+            <li><span class="b">◇</span><div>Aspire Leader — Aspire Institute</div></li>
+            <li><span class="b">◇</span><div>Undergraduate Team Lead — RAISE-25 AI Competition, Rutgers</div></li>
+            <li><span class="b">◇</span><div>Scholar — National Leadership Consortium on Developmental Disabilities<small>University of Delaware</small></div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cols reveal" style="margin-top:48px">
+        <div class="listblock">
+          <h3>Certifications</h3>
+          <ul>
+            <li><span class="b">✦</span><div>CPACC — Certified Professional in Accessibility Core Competencies</div></li>
+            <li><span class="b">✦</span><div>fMRI Intensive Training — Martinos Center</div></li>
+            <li><span class="b">✦</span><div>Docker Captain · AI Community Ambassador</div></li>
+          </ul>
+        </div>
+        <div class="listblock">
+          <h3>Memberships</h3>
+          <ul>
+            <li><span class="b">→</span><div>AI &amp; Tech Committee — ABCT</div></li>
+            <li><span class="b">→</span><div>Society for Neuroscience — Student Member</div></li>
+            <li><span class="b">→</span><div>New Jersey Neuropsychological Society</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NONPROFIT / CONSULTING -->
+  <section id="consulting" class="org">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">05 — IMAF &amp; H Consulting</span>
+        <div class="org-head">
+          <div>
+            <h2>Advancing advocacy through expertise.</h2>
+          </div>
+        </div>
+        <p class="org-mission reveal">A 501(c)(3) dedicated to fostering impactful change through advocacy, education, and innovative solutions — with a core focus on education, research, and empowering individuals and their communities.</p>
+      </div>
+
+      <div class="svc-grid reveal">
+        <div class="svc">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+          <h4>Advocacy Expertise</h4>
+          <p>Dedicated support to champion the causes that matter most to you, your organization, and your community.</p>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+          <h4>Educational Insights</h4>
+          <p>Empowering communities through tailored education, training, and impactful, accessible resources.</p>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <h4>Strategic Research</h4>
+          <p>Data-driven insights and tailored recommendations to guide informed decision-making toward your goals.</p>
+        </div>
+      </div>
+
+      <div class="org-foot reveal">
+        <span class="free">Essential Plan — Free</span>
+        <span style="color:var(--muted);font-size:15px">Comprehensive support for your advocacy goals. Internships &amp; partnerships welcome.</span>
+        <span style="flex:1"></span>
+        <a class="btn ghost" href="https://nothelp.help" target="_blank" rel="noopener noreferrer">Visit nothelp.help ↗</a>
+        <a class="btn" href="mailto:HELP@NOTHELP.HELP">Email the team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <span class="eyebrow" style="justify-content:center">06 — Get in touch</span>
+      <p class="big">Let's build something that<br><a href="mailto:housem@nothelp.help">creates real impact.</a></p>
+      <p class="sub">For research, consulting, partnerships, or internships — reach out anytime.</p>
+      <div class="contact-cta">
+        <a class="btn" href="mailto:housem@nothelp.help">housem@nothelp.help</a>
+        <a class="btn ghost" href="https://nothelp.help" target="_blank" rel="noopener noreferrer">IMAF &amp; H Consulting ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-inner">
+    <small>© <span id="yr">2026</span> Michael House · Neurobehavioral Analyst &amp; Researcher</small>
+    <div class="ft-links">
+      <a href="mailto:housem@nothelp.help">Email</a>
+      <a href="https://nothelp.help" target="_blank" rel="noopener noreferrer">IMAF &amp; H Consulting</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle (respects system pref by default, persists choice)
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeBtn'), icon=document.getElementById('themeIcon');
+    var moon='<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';
+    var sun='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+    function effective(){var t=root.getAttribute('data-theme');if(t==='auto'){return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}return t;}
+    function paint(){icon.innerHTML=effective()==='dark'?sun:moon;}
+    try{var saved=localStorage.getItem('mh-theme');if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+    paint();
+    btn.addEventListener('click',function(){
+      var next=effective()==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem('mh-theme',next);}catch(e){}
+      paint();
+    });
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change',paint);
+  })();
+
+  // Nav border on scroll
+  (function(){var n=document.getElementById('nav');addEventListener('scroll',function(){n.classList.toggle('scrolled',scrollY>8);},{passive:true});})();
+
+  // Scroll reveal
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
