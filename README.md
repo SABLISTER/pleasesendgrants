@@ -1,6 +1,6 @@
 # imhaving.fun
 
-Personal CV + **IMAF & H Consulting** site for **Michael House** — served by GitHub Pages at [imhaving.fun](https://imhaving.fun). This repo holds both the source and the deployed static output (single hand-written `index.html`, no build step).
+Personal CV + **IMAF & H Consulting** site for **Michael House** — served by GitHub Pages at [imhaving.fun](https://michaelhouse.cv). This repo holds both the source and the deployed static output (single hand-written `index.html`, no build step).
 
 | | |
 |---|---|
