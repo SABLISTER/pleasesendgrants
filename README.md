@@ -4,7 +4,7 @@ Personal CV + **IMAF & H Consulting** site for **Michael House** — served by G
 
 | | |
 |---|---|
-| **Live (custom domain)** | https://imhaving.fun |
+| **Live (custom domain)** | https://michaelhouse.cv |
 | **Live (GitHub default)** | https://sablister.github.io/pleasesendgrants/ |
 | **Stack** | HTML + CSS, inline; Google Fonts via CDN |
 
