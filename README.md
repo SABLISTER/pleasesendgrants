@@ -14,22 +14,7 @@ Personal CV + **IMAF & H Consulting** site for **Michael House** — served by G
 - `CNAME` — custom domain (`imhaving.fun`)
 - `.nojekyll` — serve files as-is (skip Jekyll)
 - `assets/banner.txt`, `assets/terminal.txt` — raw ASCII used in the terminal panel
-- `github-profile-README.md` — ASCII profile block to paste into a repo named `SABLISTER/SABLISTER`
-
-## Content provenance
-All content is drawn from the live sites **www.mike.condos** (CV) and **nothelp.help** (IMAF & H Consulting). No biographical details were invented; the nonprofit template's placeholder social links were excluded.
-
-## GitHub Pages settings
-Settings → Pages → Build and deployment → Source: **Deploy from a branch** → Branch **main** / **/(root)** → Save.
-Custom domain: **imhaving.fun** → enable **Enforce HTTPS** once DNS resolves.
-
-## DNS (DreamHost) — apex domain
-```
-A     @     185.199.108.153
-A     @     185.199.109.153
-A     @     185.199.110.153
-A     @     185.199.111.153
-CNAME www   sablister.github.io.
+- `github-profile-README.md` — ASCII profile block to paste into a repo named `SABLISTER/SABLISTER
 ```
 Remove any existing DreamHost A record on `@` that points to a DreamHost server (or set the domain to "DNS only") so it doesn't conflict.
 
