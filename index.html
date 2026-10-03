@@ -215,6 +215,71 @@
   @keyframes blink{50%{opacity:0}}
   @media (prefers-reduced-motion: reduce){.term-body .cursor{animation:none}}
 
+  /* ---------- WORK CAROUSEL ---------- */
+  .work-band{overflow:hidden;position:relative}
+  .car-glow{position:absolute;left:50%;top:56%;width:min(900px,120vw);height:520px;transform:translate(-50%,-50%);pointer-events:none;
+    background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 13%,transparent),transparent 72%);filter:saturate(1.2)}
+  .carousel{position:relative;max-width:1060px;margin:6px auto 0;padding:0 0 6px;z-index:1}
+  .carousel-stage{position:relative;height:545px;perspective:1500px;outline-offset:6px}
+  @media(max-width:640px){.carousel-stage{height:600px}}
+  .ring{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.16,1,.3,1)}
+  @media (prefers-reduced-motion: reduce){.ring{transition:none}}
+  .pcard{position:absolute;left:50%;top:50%;width:min(400px,82vw);transform-style:preserve-3d;will-change:transform;
+    transition:transform .85s cubic-bezier(.16,1,.3,1)}
+  @media (prefers-reduced-motion: reduce){.pcard{transition:none}}
+  .pcard-inner{
+    background:color-mix(in srgb, var(--surface) 58%, transparent);
+    -webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);
+    border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);
+    padding:24px 24px 22px;transition:opacity .5s ease,filter .5s ease,border-color .3s ease;
+  }
+  @media (prefers-reduced-motion: reduce){.pcard-inner{transition:none}}
+  .pcard-inner.is-side{opacity:.55;filter:blur(1.5px) saturate(.75) brightness(.94);cursor:pointer}
+  .pcard-inner.is-back{opacity:.26;filter:blur(3px) saturate(.65) brightness(.9);cursor:pointer}
+  .pcard-inner.is-front{opacity:1}
+  .pcard-inner.is-side:hover,.pcard-inner.is-back:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--border))}
+  .pcard-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+  .pcard-repo{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;white-space:nowrap}
+  .pcard-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--border);border-radius:999px;padding:4px 10px;white-space:nowrap;background:color-mix(in srgb,var(--bg) 55%,transparent)}
+  .pcard h3{font-family:'Newsreader',serif;font-weight:500;font-size:24px;letter-spacing:-.015em;line-height:1.15;margin-bottom:10px}
+  .pcard-desc{color:var(--muted);font-size:14.5px;line-height:1.6}
+  .pcard-visual{margin:18px 0 16px;border:1px solid var(--border);border-radius:12px;padding:14px 12px 12px;
+    background:color-mix(in srgb,var(--bg) 45%,transparent)}
+  .pcard-visual .vcap{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--faint);margin-top:10px;line-height:1.5}
+  .pipe{display:flex;align-items:center;justify-content:space-between;position:relative;padding:2px 0}
+  .pipe::before{content:"";position:absolute;left:12px;right:12px;top:50%;height:2px;transform:translateY(-50%);
+    background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 55%,transparent),color-mix(in srgb,var(--accent) 18%,transparent));border-radius:2px}
+  .pchip{position:relative;z-index:1;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;
+    font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;color:var(--accent);
+    background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border))}
+  @media(max-width:480px){
+    .pchip{width:auto;flex:1 1 0;min-width:0;height:22px;font-size:8px;border-radius:6px}
+    .pipe{gap:3px}
+  }
+  .pcard .tags{margin-top:2px}
+  .pcard .tag{font-size:12.5px;padding:4px 10px}
+  .pcard-empty{border-style:dashed;text-align:center;padding:38px 24px}
+  .pcard-empty .plus{width:44px;height:44px;border-radius:50%;border:1px dashed var(--faint);color:var(--faint);
+    display:grid;place-items:center;margin:0 auto 14px;font-size:22px;font-weight:300}
+  .pcard-empty h3{font-size:20px}
+  .pcard-empty p{color:var(--muted);font-size:14px}
+  .nnode{fill:color-mix(in srgb,var(--accent-soft) 80%,var(--surface));stroke:var(--accent);stroke-width:1.5}
+  .narr{fill:var(--accent);opacity:.7}
+  .nedge{stroke:var(--accent);stroke-width:1.4;fill:none;opacity:.55;stroke-dasharray:5 5;animation:dashmove 2.4s linear infinite}
+  .nlab{font-family:'JetBrains Mono',monospace;font-size:9px;fill:var(--muted);text-anchor:middle;letter-spacing:.02em}
+  @keyframes dashmove{to{stroke-dashoffset:-20}}
+  @media (prefers-reduced-motion: reduce){.nedge{animation:none}}
+  .car-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:16px}
+  .car-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 70%,transparent);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--text);display:grid;place-items:center;cursor:pointer;transition:.2s}
+  .car-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+  .car-btn svg{width:18px;height:18px}
+  .car-dots{display:flex;gap:10px;align-items:center}
+  .car-dot{width:9px;height:9px;border-radius:50%;border:0;background:var(--faint);opacity:.45;cursor:pointer;padding:0;transition:.25s}
+  .car-dot.on{opacity:1;background:var(--accent);transform:scale(1.25)}
+  .car-hint{text-align:center;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--faint)}
+
   /* ---------- reveal ---------- */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
   .reveal.in{opacity:1;transform:none}
@@ -231,6 +296,7 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#about">About</a>
+      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#honors">Honors</a>
@@ -392,11 +458,38 @@ mike@michaelhouse.cv:~$cat BLADE
     </div>
   </section>
 
+  <!-- WORK / PROJECTS -->
+  <section id="work" class="work-band" aria-labelledby="work-h">
+    <div class="car-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">02 — Recent Work</span>
+        <h2 id="work-h">What I'm building.</h2>
+        <p>Research tools and computational projects. Click a card or use the arrows to travel the loop.</p>
+      </div>
+    </div>
+    <div class="carousel reveal" id="workCarousel">
+      <div class="carousel-stage" id="carStage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Recent work projects. Use left and right arrow keys to move between projects.">
+        <div class="ring" id="carRing"></div>
+      </div>
+      <div class="car-ctrl">
+        <button class="car-btn" id="carPrev" aria-label="Previous project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="car-dots" id="carDots" role="tablist" aria-label="Projects"></div>
+        <button class="car-btn" id="carNext" aria-label="Next project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <p class="car-hint">click a card to bring it forward</p>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience" style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">02 — Experience</span>
+        <span class="eyebrow">03 — Experience</span>
         <h2>Where I've worked.</h2>
       </div>
       <div class="timeline reveal">
@@ -440,7 +533,7 @@ mike@michaelhouse.cv:~$cat BLADE
   <section id="skills">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">03 — Skills &amp; Tools</span>
+        <span class="eyebrow">04 — Skills &amp; Tools</span>
         <h2>A computational, hands-on toolkit.</h2>
         <p>From raw neural acquisition to reproducible analysis on high-performance compute.</p>
       </div>
@@ -481,7 +574,7 @@ mike@michaelhouse.cv:~$cat BLADE
   <section id="honors" style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">04 — Education &amp; Recognition</span>
+        <span class="eyebrow">05 — Education &amp; Recognition</span>
         <h2>Foundations &amp; honors.</h2>
       </div>
       <div class="cols reveal">
@@ -529,7 +622,7 @@ mike@michaelhouse.cv:~$cat BLADE
   <section id="consulting" class="org">
     <div class="wrap">
       <div class="sec-head reveal" style="margin-bottom:0">
-        <span class="eyebrow">05 — IMAF &amp; H Consulting</span>
+        <span class="eyebrow">06 — IMAF &amp; H Consulting</span>
         <div class="org-head">
           <div>
             <h2>Advancing advocacy through expertise.</h2>
@@ -569,7 +662,7 @@ mike@michaelhouse.cv:~$cat BLADE
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="wrap">
-      <span class="eyebrow" style="justify-content:center">06 — Get in touch</span>
+      <span class="eyebrow" style="justify-content:center">07 — Get in touch</span>
       <p class="big">Let's build something that<br><a href="mailto:housem@nothelp.help">creates real impact.</a></p>
       <p class="sub">For research, consulting, partnerships, or internships — reach out anytime.</p>
       <div class="contact-cta">
@@ -620,6 +713,162 @@ mike@michaelhouse.cv:~$cat BLADE
     if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
     var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){io.observe(e);});
+  })();
+
+  // Work carousel — 3D project ring (front / right-back / back / back-left)
+  (function(){
+    var ring=document.getElementById('carRing');
+    if(!ring)return;
+    var stage=document.getElementById('carStage');
+    var carousel=document.getElementById('workCarousel');
+    var dotsBox=document.getElementById('carDots');
+
+    var PROJECTS=[
+      {
+        repo:"SABLISTER / Sysys", tag:"Private build",
+        title:"Sysys — Systematic Review Pipeline",
+        desc:"A desktop app that automates systematic literature reviews: multi-source academic search, LLM scoring and claim extraction, meta-analysis, and PRISMA-compliant reports across an eleven-stage pipeline.",
+        tags:["Python","PySide6","LLMs","Meta-analysis","PRISMA"],
+        visual:"pipeline"
+      },
+      {
+        repo:"SABLISTER / sfn2026", tag:"SfN 2026 Poster",
+        title:"Brain Network Dynamics from EEG",
+        desc:"SfN 2026 poster project: cognitive flexibility and emotion regulation modeled as a single coupled-control RNN, validated on LEMON resting-state EEG — plus a criticality replication and an interactive source-space connectivity viewer.",
+        tags:["RNN","EEG","Effective connectivity","Criticality","WebGL"],
+        visual:"network"
+      },
+      {placeholder:true},
+      {placeholder:true}
+    ];
+    var ANGLES=[0,62,180,298];
+    var N=PROJECTS.length;
+    var angles=(N===4)?ANGLES:PROJECTS.map(function(_,i){return i*360/N;});
+    var cur=0, timer=null;
+    var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function visualPipeline(){
+      var stages=["Search","Score","Extract","Validate","Audit","Synthesize","Full-text","Inter-rater","Robustness","Verify","Compare"];
+      var chips=stages.map(function(s,i){
+        return '<span class="pchip" title="'+s+'">S'+(i+1)+'</span>';
+      }).join('');
+      return '<div class="pcard-visual" aria-hidden="true"><div class="pipe">'+chips+'</div>'+
+        '<div class="vcap">Eleven stages · from search query to PRISMA-ready synthesis</div></div>';
+    }
+    function visualNetwork(){
+      var nodes=[
+        {x:180,y:26,l:"Attention"},{x:284,y:55,l:"Inhibition"},{x:284,y:121,l:"Reappraisal"},
+        {x:180,y:150,l:"Awareness"},{x:76,y:121,l:"Switching"},{x:76,y:55,l:"Tolerance"}
+      ];
+      function edge(a,b,bend){
+        var mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y;
+        var len=Math.hypot(dx,dy)||1;
+        var cx=(mx-dy/len*bend).toFixed(1),cy=(my+dx/len*bend).toFixed(1);
+        return '<path class="nedge" d="M'+a.x+' '+a.y+' Q'+cx+' '+cy+' '+b.x+' '+b.y+'" marker-end="url(#narr)"/>';
+      }
+      var s='';
+      var ring6=[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0]];
+      ring6.forEach(function(e){s+=edge(nodes[e[0]],nodes[e[1]],16);});
+      [[0,3],[1,4],[2,5]].forEach(function(e){s+=edge(nodes[e[0]],nodes[e[1]],-22);});
+      nodes.forEach(function(n){
+        s+='<circle class="nnode" cx="'+n.x+'" cy="'+n.y+'" r="15"/>';
+        s+='<text class="nlab" x="'+n.x+'" y="'+(n.y+31)+'">'+n.l+'</text>';
+      });
+      return '<div class="pcard-visual" aria-hidden="true">'+
+        '<svg viewBox="0 0 360 192" width="100%" role="img" aria-label="Network diagram: six regulatory sub-processes as coupled nodes with directed connectivity">'+
+        '<defs><marker id="narr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">'+
+        '<path class="narr" d="M0 0L10 5L0 10z"/></marker></defs>'+s+'</svg>'+
+        '<div class="vcap">CF–ER coupled-control network · six nodes · learned directed connectivity</div></div>';
+    }
+    function cardHTML(p,i){
+      if(p.placeholder){
+        return '<article class="pcard" data-i="'+i+'"><div class="pcard-inner pcard-empty">'+
+          '<div class="plus" aria-hidden="true">+</div><h3>Coming soon</h3>'+
+          '<p>The next project is on its way.</p></div></article>';
+      }
+      var visual=p.visual==='pipeline'?visualPipeline():visualNetwork();
+      var tags=p.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join('');
+      return '<article class="pcard" data-i="'+i+'"><div class="pcard-inner">'+
+        '<div class="pcard-top"><span class="pcard-repo">'+p.repo+'</span><span class="pcard-tag">'+p.tag+'</span></div>'+
+        '<h3>'+p.title+'</h3><p class="pcard-desc">'+p.desc+'</p>'+visual+
+        '<div class="tags">'+tags+'</div></div></article>';
+    }
+
+    ring.innerHTML=PROJECTS.map(cardHTML).join('');
+    dotsBox.innerHTML=PROJECTS.map(function(p,i){
+      var label=p.placeholder?'Coming soon':p.title;
+      return '<button class="car-dot" role="tab" aria-selected="false" aria-label="Show project: '+label+'"></button>';
+    }).join('');
+
+    var cards=ring.children, dots=dotsBox.children;
+    var R=260;
+
+    function radius(){var w=Math.min(400,stage.clientWidth*0.82);return Math.max(190,w*0.62);}
+    function layout(){
+      R=radius();
+      var maxH=0,i;
+      for(i=0;i<N;i++){maxH=Math.max(maxH,cards[i].firstElementChild.offsetHeight);}
+      if(maxH>0)stage.style.height=(maxH+84)+'px';
+      apply();
+    }
+    function apply(){
+      var i,rel,inner,a,x;
+      ring.style.transform='rotateY('+(-angles[cur])+'deg)';
+      for(i=0;i<N;i++){
+        /* world orientation = ring(-angles[cur]) + card(a) + counter(x) = 0  =>  x = angles[cur]-a */
+        a=angles[i];x=angles[cur]-a;
+        cards[i].style.transform='translate(-50%,-50%) rotateY('+a+'deg) translateZ('+R+'px) rotateY('+x+'deg)';
+        rel=(i-cur+N)%N;
+        inner=cards[i].firstElementChild;
+        inner.classList.toggle('is-front',rel===0);
+        inner.classList.toggle('is-side',rel===1||rel===N-1);
+        inner.classList.toggle('is-back',rel!==0&&rel!==1&&rel!==N-1);
+        cards[i].setAttribute('aria-hidden',rel===0?'false':'true');
+      }
+      for(i=0;i<N;i++){
+        dots[i].classList.toggle('on',i===cur);
+        dots[i].setAttribute('aria-selected',i===cur?'true':'false');
+      }
+    }
+    function go(n){cur=(((n%N)+N)%N);apply();restart();}
+    function stop(){if(timer){clearInterval(timer);timer=null;}}
+    function restart(){stop();if(reduced)return;timer=setInterval(function(){go(cur+1);},7000);}
+
+    document.getElementById('carPrev').addEventListener('click',function(){go(cur-1);});
+    document.getElementById('carNext').addEventListener('click',function(){go(cur+1);});
+    (function(){
+      var k;
+      for(k=0;k<N;k++)(function(idx){
+        dots[idx].addEventListener('click',function(){go(idx);});
+        cards[idx].addEventListener('click',function(){
+          if(((idx-cur+N)%N)!==0)go(idx);
+        });
+      })(k);
+    })();
+
+    stage.addEventListener('keydown',function(e){
+      if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1);}
+      else if(e.key==='ArrowRight'){e.preventDefault();go(cur+1);}
+    });
+    var tx=null;
+    stage.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+    stage.addEventListener('touchend',function(e){
+      if(tx===null)return;
+      var dx=e.changedTouches[0].clientX-tx;tx=null;
+      if(Math.abs(dx)>42)go(cur+(dx<0?1:-1));
+    },{passive:true});
+
+    carousel.addEventListener('mouseenter',stop);
+    carousel.addEventListener('mouseleave',restart);
+    carousel.addEventListener('focusin',stop);
+    carousel.addEventListener('focusout',restart);
+
+    var rT=null;
+    window.addEventListener('resize',function(){clearTimeout(rT);rT=setTimeout(layout,150);});
+    window.addEventListener('load',function(){layout();});
+    if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){layout();});}
+
+    layout();restart();
   })();
 
   document.getElementById('yr').textContent=new Date().getFullYear();
