@@ -270,19 +270,6 @@
   .nlab{font-family:'JetBrains Mono',monospace;font-size:9px;fill:var(--muted);text-anchor:middle;letter-spacing:.02em}
   @keyframes dashmove{to{stroke-dashoffset:-20}}
   @media (prefers-reduced-motion: reduce){.nedge{animation:none}}
-  .estat{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-  .estat .stat{border-left:2px solid color-mix(in srgb,var(--accent) 65%,transparent);padding:2px 0 2px 8px;min-width:0}
-  .estat .num{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;color:var(--accent);line-height:1.2;white-space:nowrap}
-  .estat .num small{font-size:10px;font-weight:400;color:var(--muted)}
-  .estat .lbl{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.03em;color:var(--faint);line-height:1.45;margin-top:3px}
-  @media(max-width:480px){.estat{gap:5px}.estat .stat{padding-left:6px}.estat .num{font-size:12.5px}.estat .lbl{font-size:7px}}
-  .rnode{fill:color-mix(in srgb,var(--accent-soft) 80%,var(--surface));stroke:var(--accent);stroke-width:1.5}
-  .redge{stroke:var(--accent);stroke-width:2.2;fill:none;opacity:.65}
-  .redge.thin{stroke-width:1.1;opacity:.4;stroke-dasharray:5 4}
-  .rlab{font-family:'JetBrains Mono',monospace;font-size:9.5px;fill:var(--text);text-anchor:middle;letter-spacing:.02em;font-weight:600}
-  .rsub{font-family:'JetBrains Mono',monospace;font-size:8px;fill:var(--faint);text-anchor:middle;letter-spacing:.05em}
-  .rdial{fill:var(--surface);stroke:var(--faint);stroke-width:1.2}
-  .rneedle{stroke:var(--accent);stroke-width:2;stroke-linecap:round}
   .car-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:16px}
   .car-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 70%,transparent);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--text);display:grid;place-items:center;cursor:pointer;transition:.2s}
@@ -751,20 +738,8 @@ mike@michaelhouse.cv:~$cat BLADE
         tags:["RNN","EEG","Effective connectivity","Criticality","WebGL"],
         visual:"network"
       },
-      {
-        repo:"academicemail.org", tag:"Live interactive page",
-        title:"The 2026 IACC Draft, Measured",
-        desc:"An interactive, reproducible linguistic audit of the July 2026 IACC strategic-plan draft against the committee's own 2007–2023 record — style fingerprint, trend reversals, the collapse of autism references, and the funding context.",
-        tags:["Data journalism","NLP","Reproducibility","IACC"],
-        visual:"explorer"
-      },
-      {
-        repo:"Michael House", tag:"NSF GRFP research plan",
-        title:"Cortical Noise & the Routes to Skilled Reading",
-        desc:"Doctoral research plan: testing whether cortical dynamics — the Hurst exponent of the BOLD signal — constrain reading. RSA of orthography, phonology and semantics; activity-flow prediction from resting connectivity; a connectionist learner with injected noise.",
-        tags:["fMRI","Hurst exponent","RSA","Activity flow","Connectionist models"],
-        visual:"reading"
-      }
+      {placeholder:true},
+      {placeholder:true}
     ];
     var ANGLES=[0,62,180,298];
     var N=PROJECTS.length;
@@ -805,50 +780,13 @@ mike@michaelhouse.cv:~$cat BLADE
         '<path class="narr" d="M0 0L10 5L0 10z"/></marker></defs>'+s+'</svg>'+
         '<div class="vcap">CF–ER coupled-control network · six nodes · learned directed connectivity</div></div>';
     }
-    function visualExplorer(){
-      var stats=[
-        {n:'108',u:'/10k',l:'autism references · SP-2023: 278'},
-        {n:'10.5',u:'/1k',l:'"should" · 7.8× SP-2023'},
-        {n:'1.5',u:':1',l:'agency : autism mentions'},
-        {n:'0',u:'',l:'"on the spectrum" · was 32/10k'},
-        {n:'0.02',u:'%',l:'text inherited from SP-2023'}
-      ];
-      var s=stats.map(function(st){
-        return '<div class="stat"><div class="num">'+st.n+'<small>'+st.u+'</small></div><div class="lbl">'+st.l+'</div></div>';
-      }).join('');
-      return '<div class="pcard-visual" aria-hidden="true"><div class="estat">'+s+'</div>'+
-        '<div class="vcap">Linguistic audit of the 2026 IACC draft vs the committee\u2019s 2007\u20132023 record · every figure regenerates from one notebook</div></div>';
-    }
-    function visualReading(){
-      function edge(x1,y1,cx,cy,x2,y2,cls){
-        return '<path class="'+cls+'" d="M'+x1+' '+y1+' Q'+cx+' '+cy+' '+x2+' '+y2+'"/>';
-      }
-      var s='';
-      /* dorsal: print -> sound (solid); ventral: print -> meaning (noise-weakened, dashed) */
-      s+=edge(76,95, 180,28, 278,45, 'redge');
-      s+=edge(76,95, 180,162, 278,145, 'redge thin');
-      /* nodes */
-      s+='<circle class="rnode" cx="54" cy="95" r="22"/><text class="rlab" x="54" y="92">print</text><text class="rsub" x="54" y="104">letters</text>';
-      s+='<circle class="rnode" cx="300" cy="45" r="22"/><text class="rlab" x="300" y="42">sound</text><text class="rsub" x="300" y="54">phonology</text>';
-      s+='<circle class="rnode" cx="300" cy="145" r="22"/><text class="rlab" x="300" y="142">meaning</text><text class="rsub" x="300" y="154">semantics</text>';
-      /* cortical-noise dial in the middle */
-      s+='<circle class="rdial" cx="180" cy="95" r="17"/>';
-      s+='<line class="rneedle" x1="180" y1="95" x2="191" y2="86"/>';
-      s+='<circle cx="180" cy="95" r="2.5" fill="var(--accent)"/>';
-      s+='<text class="rlab" x="180" y="72">H</text>';
-      s+='<text class="rsub" x="180" y="126">cortical noise</text>';
-      s+='<text class="rsub" x="180" y="136">(Hurst exponent)</text>';
-      return '<div class="pcard-visual" aria-hidden="true">'+
-        '<svg viewBox="0 0 354 168" width="100%" role="img" aria-label="Reading routes diagram: printed letters map to sound via a dorsal route and to meaning via a ventral route, modulated by cortical noise">'+s+'</svg>'+
-        '<div class="vcap">Do cortical dynamics constrain which route reading takes? · RSA + activity flow + a noise-injected learner</div></div>';
-    }
     function cardHTML(p,i){
       if(p.placeholder){
         return '<article class="pcard" data-i="'+i+'"><div class="pcard-inner pcard-empty">'+
           '<div class="plus" aria-hidden="true">+</div><h3>Coming soon</h3>'+
           '<p>The next project is on its way.</p></div></article>';
       }
-      var visual=p.visual==='pipeline'?visualPipeline():p.visual==='network'?visualNetwork():p.visual==='explorer'?visualExplorer():visualReading();
+      var visual=p.visual==='pipeline'?visualPipeline():visualNetwork();
       var tags=p.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join('');
       return '<article class="pcard" data-i="'+i+'"><div class="pcard-inner">'+
         '<div class="pcard-top"><span class="pcard-repo">'+p.repo+'</span><span class="pcard-tag">'+p.tag+'</span></div>'+
