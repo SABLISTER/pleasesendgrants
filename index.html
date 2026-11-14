@@ -369,6 +369,12 @@
   }
   .pcard .tags{margin-top:2px}
   .pcard .tag{font-size:14px;padding:3px 8px}
+  .pcard-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:2px 9px;min-height:28px;
+    border:1px solid var(--ph-faint);border-radius:var(--r);font-size:14px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ph-dim);transition:.15s;
+  }
+  .pcard-link:hover{background:var(--ph);border-color:var(--ph);color:var(--ph-ink);text-shadow:none}
   .pcard-empty{border-style:dashed;text-align:center;padding:38px 24px}
   .pcard-empty .plus{width:44px;height:44px;border-radius:50%;border:1px dashed var(--ph-faint);color:var(--ph-dim);
     display:grid;place-items:center;margin:0 auto 14px;font-size:22px}
@@ -476,6 +482,7 @@
       <div class="facts">
         <span class="fact"><span class="dot"></span><b>Summa Cum Laude</b>&nbsp;· 3.94 GPA</span>
         <span class="fact"><span class="dot"></span>Simons SURFiN fellow ·&nbsp;<b>Princeton</b></span>
+        <span class="fact"><span class="dot"></span><b>Científico Latino</b>&nbsp;GSMI · GRFP '26</span>
         <span class="fact"><span class="dot"></span><b>5+ years</b>&nbsp;in research</span>
       </div>
     </div>
@@ -513,8 +520,8 @@
  <span class="key">role</span>         Neurobehavioral Analyst @ Child Mind Institute
  <span class="key">education</span>    B.A. Psychology · Montclair State (Summa Cum Laude, 3.94)
  <span class="key">fellowships</span>  Simons Foundation · Princeton (PNI) · Wilson Center
- <span class="key">stack</span>        Python · MATLAB · Bash · SQL · RNN modeling
- <span class="key">imaging</span>      FSL · AFNI · MNE-Python · Nilearn · C-PAC · EEGLAB
+ <span class="key">stack</span>        Python · MATLAB · R · Bash · SQL · RNN modeling
+ <span class="key">imaging</span>      FSL · AFNI · FreeSurfer · MNE-Python · Nilearn · C-PAC · EEGLAB
  <span class="key">org</span>          IMAF &amp; H Consulting — 501(c)(3)
  <span class="key">focus</span>        autism · sensory processing · accessibility
  <span class="key">contact</span>      housem@nothelp.help
@@ -605,19 +612,67 @@ mike@michaelhouse.cv:~$cat RIGATONI
       </div>
       <div class="timeline reveal">
         <article class="role">
-          <div class="when">2025 — Present</div>
+          <div class="when">2026 — Present</div>
           <div>
-            <h3>Neurobehavioral Analyst</h3>
-            <div class="org">Child Mind Institute</div>
-            <p class="desc">Supervise fMRI datasets, automation scripts, and quality control. Prepare and distribute biweekly internal data assessments to investigators, and provide technical and physical support for fMRI sleep studies.</p>
+            <h3>Research Project Team Member</h3>
+            <div class="org">Neuromatch Impact Scholars Program · Johns Hopkins University</div>
+            <p class="desc">Collaborating with Yueh-Chen Chiang (Johns Hopkins) and Yacine Belkhodja on Latent Representation for Neural Prediction — testing self-supervised learning objectives for neural data and benchmarking learned representations with the Neural Latents Benchmark and FALCON.</p>
           </div>
         </article>
         <article class="role">
-          <div class="when">Montclair State</div>
+          <div class="when">2026 — Present</div>
           <div>
-            <h3>EEG &amp; Data Management Team</h3>
-            <div class="org">Autism &amp; Neurodevelopment Lab</div>
-            <p class="desc">Administered ERP CORE paradigms with children aged 6–18 using REDCap, Curry 7, and Presentation. Established data-acquisition protocols that strengthened data integrity, contributing to a forthcoming journal article on genetic contributions to autism and an APA Convention 2025 poster.</p>
+            <h3>Working Group Contributor</h3>
+            <div class="org">ManyBabies Consortium · ManyBabies 3 &amp; 8</div>
+            <p class="desc">Active member of the ManyBabies 8 collaboration and its working groups; regular participant in the ManyBabies 3 Data Analyses/Curation Working Group.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">2026</div>
+          <div>
+            <h3>Deep Learning Project Team Member</h3>
+            <div class="org">Neuromatch Academy · BOLD Brains</div>
+            <p class="desc">Completed the intensive three-week Deep Learning program with a six-person research team. Presented “Atlas of Neural Representation Learning” and built reproducible AlexNet experiments testing BOLD-guided representation learning on the Kay natural-image fMRI dataset.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">2025 — 2026</div>
+          <div>
+            <h3>Neurobehavioral Analyst</h3>
+            <div class="org">Child Mind Institute</div>
+            <p class="desc">Manage, extract, process and analyse fMRI datasets, and build automation scripts in Bash, R and Python. Run visual quality control on imaging data, support investigators’ research writing, and prepare and distribute biweekly internal data assessments.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">2024 — 2025</div>
+          <div>
+            <h3>SURFiN Fellow · Research Assistant</h3>
+            <div class="org">Simons Foundation · Princeton Neuroscience Institute</div>
+            <p class="desc">Investigated hidden circuit dynamics within recurrent neural networks. Developed linear decoders, analysis workflows and computational models for neural and biological process analysis, and presented findings at the fellowship symposium.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">2024 — 2025</div>
+          <div>
+            <h3>Junior Research Fellow</h3>
+            <div class="org">Wilson Center · Washington, DC</div>
+            <p class="desc">Conducted independent research on Bangladesh’s government through news coverage, interviews and expert input. Authored the forthcoming chapter “Legal and Institutional Barriers to Justice and Accountability” in <i>Change and Justice in Bangladesh</i> (De Gruyter Brill, 2027).</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">2023 — 2025</div>
+          <div>
+            <h3>Research Assistant</h3>
+            <div class="org">Autism &amp; Neurodevelopment Lab · Montclair State</div>
+            <p class="desc">Collected EEG data for an ERP face-perception study using REDCap, Curry 7, MATLAB and MNE-Python. Administered SRS, SSIS and ADOS assessments, and contributed to a forthcoming journal article and an APA 2025 poster.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="when">2023 — 2025</div>
+          <div>
+            <h3>Research Assistant</h3>
+            <div class="org">Project AROS Lab · Montclair State</div>
+            <p class="desc">Created a digital study-abroad curriculum using a challenge-based learning framework, and used Python and ArcGIS for spatial analysis projects.</p>
           </div>
         </article>
         <article class="role">
@@ -652,29 +707,29 @@ mike@michaelhouse.cv:~$cat RIGATONI
         <div class="skill-card">
           <div class="lbl">Programming &amp; Data</div>
           <div class="tags">
-            <span class="tag">Python</span><span class="tag">MATLAB</span><span class="tag">Bash</span>
-            <span class="tag">SQL</span><span class="tag">RNN modeling</span>
+            <span class="tag">Python</span><span class="tag">MATLAB</span><span class="tag">R</span><span class="tag">Bash</span>
+            <span class="tag">SQL</span><span class="tag">LaTeX</span><span class="tag">RNN modeling</span>
           </div>
         </div>
         <div class="skill-card">
           <div class="lbl">Neuroimaging &amp; EEG</div>
           <div class="tags">
             <span class="tag">MNE-Python</span><span class="tag">EEGLAB / ERPLAB</span><span class="tag">BCILAB</span>
-            <span class="tag">FSL</span><span class="tag">AFNI</span><span class="tag">Nilearn</span><span class="tag">C-PAC</span>
+            <span class="tag">FSL</span><span class="tag">AFNI</span><span class="tag">FreeSurfer</span><span class="tag">Nilearn</span><span class="tag">C-PAC</span><span class="tag">Slicer</span>
           </div>
         </div>
         <div class="skill-card">
           <div class="lbl">Clinical Assessment</div>
           <div class="tags">
             <span class="tag">ADOS</span><span class="tag">SRS</span><span class="tag">SSIS</span>
-            <span class="tag">ASD-ASC</span><span class="tag">D-KEFS</span><span class="tag">KBIT / KBIT-2</span>
+            <span class="tag">ASD-ASC</span><span class="tag">D-KEFS</span><span class="tag">KBIT / KBIT-2</span><span class="tag">MASQ-2</span>
           </div>
         </div>
         <div class="skill-card">
           <div class="lbl">Platforms</div>
           <div class="tags">
             <span class="tag">macOS</span><span class="tag">Windows 11</span><span class="tag">Linux</span>
-            <span class="tag">HPC · Slurm</span><span class="tag">Docker</span>
+            <span class="tag">HPC · Slurm</span><span class="tag">HTCondor</span><span class="tag">Docker</span>
           </div>
         </div>
       </div>
@@ -692,19 +747,23 @@ mike@michaelhouse.cv:~$cat RIGATONI
         <div class="listblock">
           <h3>Education &amp; Training</h3>
           <ul>
-            <li><span class="b">'25</span><div><b>B.A. Psychology</b> — Montclair State University<small>Summa Cum Laude · 3.94 GPA · cognitive science, neurobiology &amp; psychopathology</small></div></li>
+            <li><span class="b">'25</span><div><b>B.A. Psychology</b> — Montclair State University<small>Summa Cum Laude · 3.94 GPA · minors in neuroscience &amp; cognitive science</small></div></li>
+            <li><span class="b">'26</span><div>SDARI Instructor Training — A.J. Drexel Autism Institute<small>Inaugural instructor cohort, August 2026</small></div></li>
+            <li><span class="b">'26</span><div>Computational Neuroscience / Deep Learning — Neuromatch Academy<small>Intensive programs with collaborative research and presentation (2025 / 2026)</small></div></li>
             <li><span class="b">'25</span><div>FSL Course — University of Oxford<small>Functional MRI analysis</small></div></li>
             <li><span class="b">'25</span><div>Functional MRI Workshop — Martinos Center</div></li>
-            <li><span class="b">'25</span><div>Computational Neuroscience — Neuromatch Academy</div></li>
           </ul>
         </div>
         <div class="listblock">
           <h3>Fellowships &amp; Honors</h3>
           <ul>
-            <li><span class="b">◇</span><div>Simons Foundation Fellowships<small>Princeton Neuroscience Institute &amp; the Wilson Center</small></div></li>
-            <li><span class="b">◇</span><div>Aspire Leader — Aspire Institute</div></li>
-            <li><span class="b">◇</span><div>Undergraduate Team Lead — RAISE-25 AI Competition, Rutgers</div></li>
-            <li><span class="b">◇</span><div>Scholar — National Leadership Consortium on Developmental Disabilities<small>University of Delaware</small></div></li>
+            <li><span class="b">◇</span><div>Científico Latino GSMI Fellow<small>Graduate School Mentorship Initiative (2026)</small></div></li>
+            <li><span class="b">◇</span><div>Científico Latino GRFP Fellow<small>NSF Graduate Research Fellowship mentorship and preparation (2026)</small></div></li>
+            <li><span class="b">◇</span><div>APA Catalyst DMP Program<small>APA 2026 Convention, Washington, DC</small></div></li>
+            <li><span class="b">◇</span><div>Simons Foundation SURFiN Fellow<small>Princeton Neuroscience Institute (2024–2025)</small></div></li>
+            <li><span class="b">◇</span><div>Wilson Center Junior Research Fellow<small>Washington, DC (2024–2025)</small></div></li>
+            <li><span class="b">◇</span><div>Scholarship Recipient — National Leadership Consortium on Developmental Disabilities<small>University of Delaware (2025)</small></div></li>
+            <li><span class="b">◇</span><div>Undergraduate Team Lead — RAISE-25 AI Competition, Rutgers<small>2025</small></div></li>
           </ul>
         </div>
       </div>
@@ -712,7 +771,9 @@ mike@michaelhouse.cv:~$cat RIGATONI
         <div class="listblock">
           <h3>Certifications</h3>
           <ul>
-            <li><span class="b">✦</span><div>CPACC — Certified Professional in Accessibility Core Competencies</div></li>
+            <li><span class="b">✦</span><div>CPACC — Certified Professional in Accessibility Core Competencies<small>IAAP #25MACPACC10857 · Princeton (2025–2028)</small></div></li>
+            <li><span class="b">✦</span><div>SDARI Intervention Trained — A.J. Drexel Autism Institute<small>August 2026</small></div></li>
+            <li><span class="b">✦</span><div>DIPY Workshop — Indiana University<small>Diffusion MRI and computational analysis (March 2026)</small></div></li>
             <li><span class="b">✦</span><div>fMRI Intensive Training — Martinos Center</div></li>
             <li><span class="b">✦</span><div>Docker Captain · AI Community Ambassador</div></li>
           </ul>
@@ -720,9 +781,11 @@ mike@michaelhouse.cv:~$cat RIGATONI
         <div class="listblock">
           <h3>Memberships</h3>
           <ul>
-            <li><span class="b">→</span><div>AI &amp; Tech Committee — ABCT</div></li>
+            <li><span class="b">→</span><div>Autism SIG Advocacy Committee Co-Chair — ABCT<small>2026–Present</small></div></li>
+            <li><span class="b">→</span><div>Tech Committee Member — ABCT<small>2025–Present</small></div></li>
             <li><span class="b">→</span><div>Society for Neuroscience — Student Member</div></li>
-            <li><span class="b">→</span><div>New Jersey Neuropsychological Society</div></li>
+            <li><span class="b">→</span><div>New Jersey Neuropsychological Society — Active Member</div></li>
+            <li><span class="b">→</span><div>Psi Chi — Post-Baccalaureate Inductee<small>2026–Present</small></div></li>
           </ul>
         </div>
       </div>
@@ -854,14 +917,16 @@ mike@michaelhouse.cv:~$cat RIGATONI
 
     var PROJECTS=[
       {
-        repo:"SABLISTER / Sysys", tag:"Private build",
+        repo:"IMAF & H / Sysys_Release_v1", tag:"Poster release",
+        url:"https://github.com/IMAF-and-H-Consulting/Sysys_Release_v1",
         title:"Sysys — Systematic Review Pipeline",
-        desc:"A desktop app that automates systematic literature reviews: multi-source academic search, LLM scoring and claim extraction, meta-analysis, and PRISMA-compliant reports across an eleven-stage pipeline.",
+        desc:"A PySide6 desktop app that automates systematic literature reviews: multi-source search, screening, LLM scoring and claim extraction, evidence synthesis, meta-analysis, robustness checks, and source-linked PRISMA/GRADE reports — published as the app-only poster release.",
         tags:["Python","PySide6","LLMs","Meta-analysis","PRISMA"],
         visual:"pipeline"
       },
       {
         repo:"SABLISTER / sfn2026", tag:"SfN 2026 Poster",
+        url:"https://github.com/SABLISTER/sfn2026",
         title:"Brain Network Dynamics from EEG",
         desc:"SfN 2026 poster project: cognitive flexibility and emotion regulation modeled as a single coupled-control RNN, validated on LEMON resting-state EEG — plus a criticality replication and an interactive source-space connectivity viewer.",
         tags:["RNN","EEG","Effective connectivity","Criticality","WebGL"],
@@ -869,6 +934,7 @@ mike@michaelhouse.cv:~$cat RIGATONI
       },
       {
         repo:"academicemail.org", tag:"Live interactive page",
+        url:"https://academicemail.org",
         title:"The 2026 IACC Draft, Measured",
         desc:"An interactive, reproducible linguistic audit of the July 2026 IACC strategic-plan draft against the committee's own 2007–2023 record — style fingerprint, trend reversals, the collapse of autism references, and the funding context.",
         tags:["Data journalism","NLP","Reproducibility","IACC"],
@@ -966,10 +1032,12 @@ mike@michaelhouse.cv:~$cat RIGATONI
       }
       var visual=p.visual==='pipeline'?visualPipeline():p.visual==='network'?visualNetwork():p.visual==='explorer'?visualExplorer():visualReading();
       var tags=p.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join('');
+      var repo=p.url?'<a class="pcard-repo" href="'+p.url+'" target="_blank" rel="noopener noreferrer">'+p.repo+' <span aria-hidden="true">↗</span></a>':'<span class="pcard-repo">'+p.repo+'</span>';
+      var link=p.url?'<a class="pcard-link" href="'+p.url+'" target="_blank" rel="noopener noreferrer">open repository <span aria-hidden="true">↗</span></a>':'';
       return '<article class="pcard" data-i="'+i+'"><div class="pcard-inner">'+
-        '<div class="pcard-top"><span class="pcard-repo">'+p.repo+'</span><span class="pcard-tag">'+p.tag+'</span></div>'+
+        '<div class="pcard-top">'+repo+'<span class="pcard-tag">'+p.tag+'</span></div>'+
         '<h3>'+p.title+'</h3><p class="pcard-desc">'+p.desc+'</p>'+visual+
-        '<div class="tags">'+tags+'</div></div></article>';
+        '<div class="tags">'+tags+'</div>'+link+'</div></article>';
     }
 
     ring.innerHTML=PROJECTS.map(cardHTML).join('');
@@ -1002,6 +1070,8 @@ mike@michaelhouse.cv:~$cat RIGATONI
         inner.classList.toggle('is-side',rel===1||rel===N-1);
         inner.classList.toggle('is-back',rel!==0&&rel!==1&&rel!==N-1);
         cards[i].setAttribute('aria-hidden',rel===0?'false':'true');
+        var links=cards[i].querySelectorAll('a');
+        for(var j=0;j<links.length;j++){links[j].tabIndex=rel===0?0:-1;}
       }
       for(i=0;i<N;i++){
         dots[i].classList.toggle('on',i===cur);
