@@ -1,27 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-phosphor="orange" data-fx="on">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>404 — Michael House</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:wght@500&display=swap" rel="stylesheet" />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#000000" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='2' fill='%23ff9f2e'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='17' text-anchor='middle' fill='%231c0900'%3EM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
 <style>
+  :root{
+    --ph:#ff9f2e; --ph-dim:#e08a2a; --ph-muted:#c98a45; --ph-faint:#8a5418; --ph-ink:#1c0900;
+    --ph-glow:rgb(255 140 30 / .55); --ph-glow-soft:rgb(255 120 20 / .22);
+    --glass:#0d0703; --glass-2:#170b04;
+  }
   *{margin:0;box-sizing:border-box}
-  body{min-height:100vh;display:grid;place-items:center;background:#0d1117;color:#c9d1d9;font-family:'JetBrains Mono',monospace;padding:24px;text-align:center}
-  .card{max-width:520px}
-  h1{font-family:'Newsreader',serif;font-size:clamp(40px,9vw,72px);color:#8b83ff;font-weight:500;letter-spacing:-.02em}
-  p{margin-top:14px;color:#7d8590;font-size:14px;line-height:1.6}
-  .term{margin-top:22px;text-align:left;background:#161b22;border:1px solid #20232b;border-radius:10px;padding:16px 18px;font-size:13px;color:#c9d1d9;overflow-x:auto}
-  .g{color:#3fb950}.m{color:#6e7681}
-  a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
-  .home{display:inline-block;margin-top:22px;font-size:13px;color:#8b83ff}
+  html{background:#000;color-scheme:dark}
+  body{
+    min-height:100vh;display:grid;place-items:center;padding:24px;text-align:center;
+    background:radial-gradient(120% 90% at 50% 40%, var(--glass-2) 0%, var(--glass) 46%, #000 100%);
+    color:var(--ph);font-family:'VT323',ui-monospace,Menlo,monospace;font-size:20px;line-height:1.45;
+    text-shadow:0 0 2px var(--ph-glow-soft);
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(to bottom, rgb(0 0 0 / 0) 0 2px, rgb(0 0 0 / .32) 2px 3px);
+    mix-blend-mode:multiply;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;
+    background:radial-gradient(130% 110% at 50% 50%, transparent 55%, rgb(0 0 0 / .55) 82%, rgb(0 0 0 / .92) 100%);
+  }
+  .card{max-width:560px;position:relative;z-index:1}
+  .kicker{font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--ph-muted);display:inline-flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:0;border-bottom:3px dotted var(--ph-faint)}
+  h1{
+    font-weight:400;text-transform:uppercase;font-size:clamp(64px,16vw,120px);line-height:.92;margin-top:14px;
+    text-shadow:0 0 2px var(--ph),0 0 24px var(--ph-glow),0 0 64px var(--ph-glow-soft);
+  }
+  .term{
+    margin-top:20px;text-align:left;background:var(--glass);border:2px solid var(--ph-faint);border-radius:2px;
+    padding:16px 18px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12.5px;line-height:1.6;
+    color:var(--ph-dim);text-shadow:none;overflow-x:auto;
+    box-shadow:0 0 28px -10px var(--ph-glow-soft), inset 0 0 40px rgb(0 0 0 / .8);
+  }
+  .term .g{color:var(--ph)}
+  .term .m{color:var(--ph-muted)}
+  .term .c{color:var(--ph-faint)}
+  a{color:var(--ph);text-decoration:none}
+  .home{
+    display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:6px 14px;min-height:40px;
+    border:2px solid var(--ph);border-radius:2px;font-size:17px;letter-spacing:.1em;text-transform:uppercase;transition:.15s;
+  }
+  .home:hover{background:var(--ph);color:var(--ph-ink);text-shadow:none;box-shadow:0 0 18px var(--ph-glow-soft)}
+  :focus-visible{outline:2px solid var(--ph);outline-offset:3px}
 </style>
 </head>
 <body>
   <div class="card">
+    <span class="kicker">Page not found</span>
     <h1>404</h1>
     <div class="term"><span class="g">housem@nothelp.help</span><span class="m">:</span>~$ find "$REQUEST"
-<span class="m"># nothing here — the page wandered off.</span></div>
+<span class="c"># nothing here — the page wandered off.</span></div>
     <a class="home" href="/">← cd ~ (back home)</a>
   </div>
 </body>
