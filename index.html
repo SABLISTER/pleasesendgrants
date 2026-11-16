@@ -76,11 +76,12 @@
   #experience{--sec:#ffc23d}
   #skills{--sec:#5cff86}
   #honors{--sec:#ff8ad8}
+  #publications{--sec:#7aa2ff}
   #consulting{--sec:#b48cff}
   #contact{--sec:#5ce1ff}
   @media (prefers-contrast: more){
     #work,#contact{--sec:#a8efff} #experience{--sec:#ffd67a}
-    #skills{--sec:#9dffba} #honors{--sec:#ffb3e8} #consulting{--sec:#cfbdff}
+    #skills{--sec:#9dffba} #honors{--sec:#ffb3e8} #publications{--sec:#b3ccff} #consulting{--sec:#cfbdff}
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -169,7 +170,7 @@
     padding:6px 9px;transition:background-color .15s,color .15s;min-height:40px;display:inline-flex;align-items:center;
   }
   .nav-links a:hover{color:var(--ph-ink);background:var(--ph);text-shadow:none}
-  @media(min-width:980px){.nav-links{display:flex}}
+  @media(min-width:1080px){.nav-links{display:flex}}
   .nav-right{display:flex;align-items:center;gap:10px}
   .theme-btn{
     display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 11px;cursor:pointer;
@@ -278,6 +279,27 @@
     font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--sec);
     background:color-mix(in srgb,var(--sec) 10%,transparent);border:1px solid color-mix(in srgb,var(--sec) 50%,transparent);
     padding:3px 10px;border-radius:var(--r);
+  }
+
+  /* --- selected publications --------------------------------------- */
+  .pub-list{display:grid;gap:0}
+  .pub{
+    display:grid;grid-template-columns:1fr;gap:8px;padding:22px 12px;
+    border-top:3px dotted color-mix(in srgb,var(--sec) 40%,transparent);transition:background-color .15s;
+  }
+  .pub:last-child{border-bottom:3px dotted color-mix(in srgb,var(--sec) 40%,transparent)}
+  .pub:hover{background:color-mix(in srgb,var(--sec) 7%,transparent)}
+  @media(min-width:760px){.pub{grid-template-columns:190px 1fr;gap:34px;align-items:baseline}}
+  .pub .meta{min-width:0}
+  .pub .year{font-size:22px;letter-spacing:.1em;color:var(--sec);line-height:1}
+  .pub .venue{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--ph-muted);margin-top:8px;line-height:1.45}
+  .pub h3{font-size:23px;letter-spacing:.02em;line-height:1.15;color:var(--ph)}
+  .pub .authors{font-size:17px;color:var(--ph-muted);margin-top:6px}
+  .pub .blurb{font-size:17px;color:var(--ph-muted);margin-top:8px;max-width:70ch;line-height:1.45}
+  .pub .status{
+    display:inline-flex;align-items:center;margin-top:12px;padding:2px 9px;border-radius:var(--r);
+    border:1px solid color-mix(in srgb,var(--sec) 55%,transparent);color:var(--sec);
+    font-size:14px;letter-spacing:.16em;text-transform:uppercase;
   }
 
   /* --- contact ----------------------------------------------------- */
@@ -451,6 +473,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#honors">Honors</a>
+      <a href="#publications">Publications</a>
       <a href="#consulting">Consulting</a>
     </nav>
     <div class="nav-right">
@@ -801,11 +824,60 @@ mike@michaelhouse.cv:~$cat RIGATONI
     </div>
   </section>
 
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">06 — Selected Publications</span>
+        <h2>Selected publications &amp; talks.</h2>
+        <p>Conference presentations and a forthcoming book chapter from the last two years.</p>
+      </div>
+      <div class="pub-list reveal">
+        <article class="pub">
+          <div class="meta">
+            <div class="year">2026</div>
+            <div class="venue">ABCT 60th Annual Convention<br>Baltimore, MD</div>
+          </div>
+          <div>
+            <h3>More Excitatory Than Inhibitory: A Large-Scale Synthesis of E/I Imbalance in Autism</h3>
+            <p class="authors">House, M., Ghowash, I., &amp; Eisenberg, D.</p>
+            <p class="blurb">A large-scale synthesis of evidence concerning altered excitatory/inhibitory balance in autism.</p>
+            <span class="status">To be presented</span>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="meta">
+            <div class="year">2026</div>
+            <div class="venue">Neuroscience 2026<br>Society for Neuroscience</div>
+          </div>
+          <div>
+            <h3>Brain Network Dynamics from EEG: A Coupled-Control Model, a Criticality Replication, and an Interactive Source-Space Viewer</h3>
+            <p class="authors">House, M. S., &amp; Goodyear, P.</p>
+            <p class="blurb">Integrates EEG network dynamics, computational modelling, criticality analyses, source-space visualization and brain.nothelp.help.</p>
+            <span class="status">To be presented</span>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="meta">
+            <div class="year">2027</div>
+            <div class="venue">Change and Justice in Bangladesh, Ch. 2<br>De Gruyter Brill</div>
+          </div>
+          <div>
+            <h3>Legal and Institutional Barriers to Justice and Accountability</h3>
+            <p class="authors">House, M.</p>
+            <p class="blurb">Independent research on Bangladesh&rsquo;s government, drawing on news coverage, interviews and expert input on national policy.</p>
+            <span class="status">Forthcoming chapter</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- NONPROFIT / CONSULTING -->
   <section id="consulting" class="org">
     <div class="wrap">
       <div class="sec-head reveal" style="margin-bottom:0">
-        <span class="eyebrow">06 — IMAF &amp; H Consulting</span>
+        <span class="eyebrow">07 — IMAF &amp; H Consulting</span>
         <div class="org-head">
           <div>
             <h2>Advancing advocacy through expertise.</h2>
@@ -845,7 +917,7 @@ mike@michaelhouse.cv:~$cat RIGATONI
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="wrap">
-      <span class="eyebrow" style="justify-content:center">07 — Get in touch</span>
+      <span class="eyebrow" style="justify-content:center">08 — Get in touch</span>
       <p class="big">Let's build something that<br><a href="mailto:housem@nothelp.help">creates real impact.</a></p>
       <p class="sub">For research, consulting, partnerships, or internships — reach out anytime.</p>
       <div class="contact-cta">
